@@ -11,7 +11,7 @@ const NewsLayout = () => {
         main
         <Header></Header>
         <div className='grid grid-cols-12'>
-            <div className='col-span-9 bg-teal-100'><Outlet></Outlet></div>
+            <div className='col-span-9 '><Outlet></Outlet></div>
 
             <div className='mx-5 col-span-3 '><RightNav></RightNav></div>
 

@@ -3,7 +3,14 @@ import { FaUserAlt } from 'react-icons/Fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../provider/AuthProvider';
 const NavigationBar = () => {
-    const { user } = useContext(AuthContext)
+    const { user ,logout} = useContext(AuthContext)
+    const handlelogout = ()=>{
+        logout()
+        .then()
+        .catch(error =>{
+            console.log(error)
+        })
+    }
     return (
         <div>
              <nav className=" mt-5 py-4 font-light">
@@ -22,7 +29,7 @@ const NavigationBar = () => {
                             {
                                user ? <>
                                <FaUserAlt className='mx-2'></FaUserAlt>
-                               {user.dname} <button className='btn mx-2'>
+                               {user.dname} <button onClick={handlelogout} className='btn mx-2'>
                                 logout
                                </button>
                                </> : <Link className='btn btn-secondary' to='/login'>
